@@ -213,10 +213,10 @@ n_m11 = length(math_11)
 # H0: mu11 - mu9 = 0
 # H0: mu11 - mu9 < 0
 
-Z3m = (meanm_11 - meanm_9)/sqrt(varm_9/n_m9 + varm_11/n_m11)
+Z3m = (meanm_11-meanm_9)/sqrt(varm_9/n_m9 + varm_11/n_m11)
 valorp_Z3m = pnorm(Z3m)
 cat(valorp_Z3m)
 
 # Así, el valorp_Z2m = 2.578444e-07, es decir valorp_z2m < 0.001 y rechazo H0.
-# Esto indica que los colegios a nivel país sí mejoraron entre quinto y noveno
+# Esto indica que los colegios a nivel país no mejoraron de noveno a once
 # en el percentil de matemáticas.
