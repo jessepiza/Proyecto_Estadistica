@@ -54,7 +54,7 @@ n_m2 = length(math_11) # Población de matemáticas en once.
 Zm = (meanm_5 - meanm_11)/sqrt(varm_5/n_m1 + varm_11/n_m2)
 valorpm = pnorm(Zm) # El valor p de la prueba Z en matemáticas.
 
-# Rechazamos H0, es decir, dado que el valor p = 1.0499 e-05. Esto nos indica que 
+# Rechazamos H0, es decir, dado que el valor p = 1.0499e-05. Esto nos indica que 
 # el valor p < 0.001 (***) y por ende podemos concluir que en los colegios no oficiales
 # que superaron el percentil 35 a nivel país tuvieron un progreso en la educación en 
 # matemáticas en el paso del tiempo de primaria a secundaria.
@@ -217,6 +217,15 @@ Z3m = (meanm_11-meanm_9)/sqrt(varm_9/n_m9 + varm_11/n_m11)
 valorp_Z3m = pnorm(Z3m)
 cat(valorp_Z3m)
 
-# Así, el valorp_Z2m = 2.578444e-07, es decir valorp_z2m < 0.001 y rechazo H0.
+# Así, el valorp_Z3m = 2.578444e-07, es decir valorp_z3m < 0.001 y rechazo H0.
 # Esto indica que los colegios a nivel país no mejoraron de noveno a once
 # en el percentil de matemáticas.
+
+# Ahora bien, haciendo el comparativo entre los valores p de cada una de las
+# secciones obtenemos:
+valores_pm = c(valorp_Z1m, valorp_Z2m, valorp_Z3m)
+cat(which.min(valores_pm))
+
+# Así, el valor p menor entre las pruebas Z realizadas es el de la sección 2.
+# Esto indica que entre quinto y noveno los avances entre los colegios fueron
+# mejores.
